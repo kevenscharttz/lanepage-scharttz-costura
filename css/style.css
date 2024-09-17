@@ -1,0 +1,294 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: Poppins;
+    src: url(../font/Poppins/Poppins-Bold.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: PoppinsRegular;
+    src: url(../font/Poppins/Poppins-Regular.ttf) format(truetype);
+}
+
+* {
+    margin: 0px; /* Define a margem global como 0 */
+    padding: 0px; /* Define o preenchimento global como 0 */
+    box-sizing: border-box; /* Adicionei isso para ajudar no dimensionamento */
+    font-family: Poppins; /* Define a fonte global como Poppins */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%; /* Altura de 100% da tela */
+    overflow-x: hidden; /* Adicionei isso para evitar rolagem horizontal */
+}
+
+#imagem-inicio {
+    min-height: 100vh; /* Define o tamanho minimo em 100 vh(medição para viewport) */
+    width: 100%; /* Define a largura para 100% da tela */
+    background-image: linear-gradient(rgba(2, 5, 20, 0.8), rgba(2, 5, 20, 0.8)), url(../img/mao-costura.jpg); /* Define a imagem de fundo do HERO, com uma sobrepósição escura */
+    background-size: cover;  /* Define o tamanho da imagem de fundo para que ela cubra completamente o elemento*/
+    background-position: center; /* Define a posição do elemento no centro */
+    position: relative; /* Define o posicionamento do elemento como relativo ao seu posicionamento padrão */
+}
+
+header {
+    display: flex; /* Define o container como flexivel */
+    justify-content: space-between; /* Define um espaçamento entre os elementos */
+    align-items: center; /* Define o alinhamento vertical no centro */
+    padding: 2% 6%; /* Define o preenchimento do topo e o fundo em 2% e os lados em 6% */
+}
+
+header .logo {
+    text-shadow: 3px 3px 2px black; /* Define o sombreamento do texto */
+    display: block; /* Define o display como um bloco */
+    width: 90px; /* Define a largura */
+    color: white; /* Define a cor da fonte como branca */
+    font-size: 30px; /* Define o tamanho do texto */
+}
+
+nav {
+    flex: 1; /* Define o flex-grow*/
+    text-align: right; /* Define o texto na direita */
+}
+
+nav ul li {
+    list-style: none; /* Retira a bolinha */
+    display: inline-block; /* Combina características de elementos inline e block. */
+    padding: 8px 12px; /* Define o preenchimento em 8 no topo e fundo, e 12 dos lados */
+    position: relative; /* Define o posicionamento do elemento como relativo ao seu posicionamento padrão */
+}
+
+li a {
+    color: white; /* Define a cor do texto */
+    text-decoration: none; /* Retira a underline do link */
+    font-size: 20px; /* Define o o tamanho da fonte */
+}
+
+nav ul li::after {
+    content: '';
+    width: 0%; /* Define a largura em 0% */
+    height: 2px; /* Define a altura em 2 */
+    background-color: rgb(197, 197, 197); /* Define a cor de fundo */
+    display: block; /* Define o display como um bloco */
+    margin: auto; /* Define a margem em auto */
+    transition: 0.5s; /* Define a transição do elemento*/
+}
+
+nav ul li:hover::after {
+    width: 100%; /* Define a largura em 100% */
+}
+
+#text-hero {  
+    width: 100%; /* Define a largura como 100% */
+    color: white; /* Define a cor da fonte como branca */
+    position: absolute; /* Define o posicionamento do elemento conforme o elemento pai */
+    top: 50%; /* Define o topo em 50% */
+    left: 50%; /* Define a esquerda em 50% */
+    transform: translate(-50%, -50%); /* Define como o elemento se moverá ao longo dos eixos X e Y */
+    text-align: center; /* Define a centralização do texto */
+    font-family: PoppinsRegular; /* Define a fonte como PoppinsRegular */
+}
+
+#text-hero h1 {
+    text-shadow: 3px 3px 2px black; /* Define o sombreamento do texto */
+    font-size: 50px; /* Define o tamanho da fonte */
+}
+
+#text-hero p {
+    text-shadow: 3px 3px 2px black; /* Define o sombreamento do texto */
+    font-size: 18px; /* Define o tamanho da fonte */
+    margin: 10px 10px 20px 10px; /* Define a margem no topo como 10 e o fundo como 20, e os lados como 10 */
+} 
+
+#text-hero a {
+    text-shadow: 3px 3px 2px black; /* Define o sombreamento do texto */
+    font-size: 1.5em; /* Define o tamanho da fonte */
+    text-decoration: none; /* Retira a underline do link */
+    color: white; /* Define a cor da fonte como branca */
+    background-color: rgba(24, 192, 60, 0); /* Define a cor de fundo */
+    padding: 10px; /* Define o preenchimento em 10 */
+    border: 2px solid white; /* Define a borda */
+    border-radius: 8px; /* Define o arredondamento da borda */
+    transition: 0.5s; /* Define a transição do elemento*/
+}
+
+#text-hero a:hover {
+    background-color: rgb(24, 192, 60); /* Define a cor de fundo */
+} 
+
+#text-hero a > img {
+    width: 40px; /* Define a largura em 40*/
+    height: 40px; /* Define a altura em 40 */
+    padding-right: 5px; /* Define o preenchimento na direita em 5 */
+    vertical-align: middle; /* Faz a imagem ficar centralizada verticalmente */
+}
+
+.icon-svg {
+    width: 20px; /* Define a largura em 20*/
+    height: 20px; /* Define a altura em 20 */
+    display: none; /* Deixa o item invisivel, ele não aparece */
+}
+
+@media (max-width: 700px) {
+    #text-hero h1 {
+        font-size: 20px; /* Define o tamanho do texto */
+    }
+    
+    #text-hero p {
+        font-size: 10px; /* Define o tamanho do texto */
+    }
+    
+    nav ul li {
+        display: block; /* Define o display como um bloco */
+    }
+    
+    nav {
+
+        position: absolute; /* Define o posicionamento do elemento conforme o elemento pai */
+        background-color: gray; /* Define a cor de fundo */
+        height: 100vh; /* Define o tamanho minimo em 100 vh(medição para viewport) */
+        width: 200px; /* Define o tamanho em 200 na largura */
+        top: 0; /* Define o topo em 0 */
+        right: -200px; /* Define o lado direito em -200 */
+        text-align: left; /* Define o que o texto fique a esquerda */
+        z-index: 1; /* Define a sobreposição de elementos */
+        transition: 1s; /* Define a transição do elemento */
+        overflow: hidden;
+    } 
+    
+    header .icon-svg {
+        display: block; /* Define o display como um bloco */
+        color: white; /* Define a cor da fonte como branca */
+        margin: 10px; /* Define a margem  como 10 */
+        font-size: 22px; /* Define o tamanho do texto */
+        cursor: pointer; /* Define o o mouse no modo dedo*/
+    }
+    
+    nav ul {
+        padding: 30px; /* Define o preenchimento como 30 */
+    }
+}
+
+
+main{
+    width: 80%; /* Define o tamanho em 80% na largura */
+    margin: auto; /* Define a margin em auto */
+    text-align: center; /* Define a centralização do texto */
+    padding-top: 100px; /* Define o preenchimento no topo como 100 */
+}
+
+main h1{
+    font-family: PoppinsRegular; /* Define a fonte como PoppinsRegular */
+    font-size: 50px; /* Define o tamanho do texto em 50 */
+    font-weight: bolder; /* Define o peso da fonte, tipo bold */
+}
+main p{
+    font-family: PoppinsRegular; /* Define a fonte como PoppinsRegular */
+    color: #505050; /* Define a cor do texto */
+    font-size: 18px; /* Define o tamanho do texto em 18 */
+    font-weight: 300; /* Define o peso da fonte, tipo bold */
+    line-height: 20px; /* Define o espaçamento entre as linhas */
+    padding-top: 10px; /* Define o preenchimento no topo como 10 */
+}
+
+main > article{
+    margin-top: 5%; /* Define a margem do topo como 5% */
+    display: flex; /* Define o container como flexivel */
+    justify-content: space-between; /* Define um espaçamento entre os elementos */
+}
+
+main > article > section{
+    flex-basis: 43%; /* Define o tamanho inicial de um item flexível antes de qualquer espaço disponível */
+    background-color: rgb(241, 241, 241); /* Define a cor de fundo */
+    border-radius: 10px; /* Define o arredondamento da borda */
+    margin-bottom: 5%; /* Define a margem do fundo em 5% */
+    padding: 20px 12px; /* Define o preenchimento como 20 no topo e fundo e em 12 nos lados */
+    box-sizing: border-box; /* Especifica que a largura e a altura incluem o conteúdo, o padding e a borda, mas não o margin. */
+    transition: 0.5s; /* Define a transição do elemento */
+}
+
+main > article > section h2{
+    text-align: center; /* Define a centralização do texto */
+    font-weight: 400; /* Define o peso da fonte, tipo bold */
+    margin: 10px; /* Define a margem como 10 */
+}
+
+main > article > section:hover{
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.500); /* Define o sombreamento da caixa */
+}
+
+@media(max-width:700px){
+    article{
+        display: flex; /* Define o container como flexivel */
+        flex-direction: column; /* Faz com que os itens se organizem como colunas */
+        margin-top: 20px; /* Define a margem no topo como 20 */
+        margin-bottom: 20px; /* Define a margem no fundo como 20 */
+    }
+}
+
+aside {
+    margin-bottom: 200px;
+    display: flex; /* Define o container como flexivel */
+    justify-content: center; /* Define o alinhamento no centro do eixo principal do container */
+    align-items: center; /* Define o alinhamento na transversal do container */
+    margin: 0; /* Define a margem  como 0 */
+}
+
+aside article {
+    text-align: center; /* Define a centralização do texto */
+    max-width: 600px; /* Define a largura máxima do article */
+    width: 100%; /* Define que o article ocupe a largura total*/
+    padding: 20px; /* Define o espaçamento interno do article */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  /* Define o sombreamento da caixa */
+    background-color: #f0f0f0; /* Define a cor de fundo */
+    border-radius: 8px;  /* Define o arredondamento da borda */
+}
+
+.grupoBotao {
+    margin-top: 20px; /* Define a margem do topo como 20 */
+}
+
+.botao {
+    padding: 10px 20px; /* Define o preenchimento no topo e fundo como 10 e dos lados como 20 */
+    font-size: 18px; /* Define o tamanho do texto */
+    background-color: #4CAF50; /* Define a cor de fundo */
+    color: white; /* Define a cor da fonte como branca */
+    border: none; /* Retira a borda */
+    cursor: pointer; /* Define que quando passo o mouse em cima, ele fica com o dedinho levantado */
+    border-radius: 4px; /* Define o arredondamento da borda */
+    transition: background-color 0.3s ease; /* Define a transição do elemento */
+}
+
+.botao:hover {
+    background-color: #45a049; /* Define a cor de fundo */
+}
+
+#moldura {
+    max-width: 100%; /* Define a largura maxima com 100% */
+    border-radius: 8px; /* Define o arredondamento da borda */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Define o sombreamento da caixa */
+}
+
+footer{
+    font-family: PoppinsRegular; /* Define a fonte como PoppinsRegular */
+    text-align: center; /* Define a centralização do texto */
+    justify-content: center; /* Define o alinhamento no centro do eixo principal do container */
+    margin: 200px 0px 0px 0px; /* Define a margem  como 200 no topo */
+}
+footer p{
+    margin-top: 200px; /* Define a margem como 200 no topo */
+}
+footer img{
+    margin: 0px 10px 20px 10px; /* Define a margem  como 10 dos lados e 20 no fundo*/
+}
+
+footer #copyright{
+    font-family: PoppinsRegular; /* Define a fonte como PoppinsRegular */
+    background-color: rgba(0, 0, 0, 0.400); /* Define a cor de fundo */
+    margin: 0px; /* Define a margem  como 0 */
+    padding: 0px; /* Define o preenchimento como 0 */
+}
